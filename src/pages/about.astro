@@ -1,0 +1,118 @@
+---
+import BaseLayout from '../layouts/BaseLayout.astro';
+
+import ContactCTA from '../components/ContactCTA.astro';
+import Hero from '../components/Hero.astro';
+---
+
+<BaseLayout title="About | Santatra Fanambinantsoa" description="About Santatra ">
+	<div class="stack gap-20">
+		<main class="wrapper about">
+			<Hero
+				title="About"
+				tagline="Thanks for stopping by. Read below to learn more about myself and my background."
+			>
+				<img
+					width="1300"
+					height="873"
+					src="/assets/santatraw.jpg"
+					alt="Santatra at work with a colleague"
+				/>
+			</Hero>
+<style>
+        .highlight {
+            color: purple;
+			font-family: consolas;
+            font-style: italic;
+        }
+    </style>
+			<section>
+				<h2 class="section-title">Background</h2>
+				<div class="content">
+					<p>
+					With a solid background in software development, I have contributed to the success of numerous projects, from web applications to mobile applications. My passion for technology goes beyond simple development; I am also interested in electronics, AI and computer hardware maintenance. I am proficient in front-end and back-end development, and always strive to produce clean, easily maintainable code. Always eager to learn and stay up to date with the latest technology, technology is much more than a profession to me; it's a real passion.
+					</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Education</h2>
+				<div class="content">
+		I am in Master II at a computer science university (ISPM), where I have acquired a solid understanding of the principles and best practices of software engineering. Additionally, I have completed specialized courses and certifications in areas such as Full-Stack Development, Cloud Computing and DevOps. These educational experiences equipped me with the skills and knowledge to tackle complex technical challenges and drive innovation in software development.
+</p>
+				</div>
+			</section>
+			<section>
+				<h2 class="section-title">Skills</h2>
+				<div class="content">
+					<p> 
+					Programming Languages: Proficient in various programming languages including <span class='highlight'> JavaScript </span>, <span class='highlight'>Java</span>, <span class='highlight'> PHP</span>. Experienced in developing both <span class='highlight'> front-end</span> and <span class='highlight'> back-end </span> solutions using frameworks such as <span class='highlight'>React</span>, <span class='highlight'>Node.js</span>, <span class='highlight'>Next.js</span>,<span class='highlight'>Express.js</span>,<span class='highlight'>Laravel</span> and <span class='highlight'>Spring Boot</span>.
+    Web Development: Skilled in building responsive and user-friendly web applications using <span class='highlight'>HTML5</span>, <span class='highlight'>CSS3</span>, and <span class='highlight'>modern JavaScript libraries</span> and frameworks. Familiar with <span class='highlight'>RESTful API design</span> and <span class='highlight'>integration</span>.
+    Database Management: Experienced in designing and <span class='highlight'>optimizing relational databases</span> using <span class='highlight'>SQL</span> such as <span class='highlight'>postgresql</span>,<span class='highlight'> mysql</span> as well as utilizing <span class='highlight'>NoSQL databases</span> such as <span class='highlight'>MongoDB</span> and <span class='highlight'>Firebase</span> for flexible data storage.
+    Agile Methodologies: Well-versed in Agile software development practices, including <span class='highlight'>Scrum</span> and<span class='highlight'> Kanban</span>. Experienced in participating in Agile ceremonies and working collaboratively in cross-functional teams to deliver iterative and incremental software solutions.
+    Problem-Solving: Strong analytical and problem-solving skills, with the ability to troubleshoot issues, debug code, and implement effective solutions efficiently.
+	</p>
+				</div>
+			</section>
+		</main>
+
+		<ContactCTA />
+	</div>
+</BaseLayout>
+
+<style>
+	.about {
+		display: flex;
+		flex-direction: column;
+		gap: 3.5rem;
+	}
+
+	img {
+		margin-top: 1.5rem;
+		border-radius: 1.5rem;
+		box-shadow: var(--shadow-md);
+	}
+
+	section {
+		display: flex;
+		flex-direction: column;
+		gap: 0.5rem;
+		color: var(--gray-200);
+	}
+
+	.section-title {
+		grid-column-start: 1;
+		font-size: var(--text-xl);
+		color: var(--gray-0);
+	}
+
+	.content {
+		grid-column: 2 / 4;
+	}
+
+	.content :global(a) {
+		text-decoration: 1px solid underline transparent;
+		text-underline-offset: 0.25em;
+		transition: text-decoration-color var(--theme-transition);
+	}
+
+	.content :global(a:hover),
+	.content :global(a:focus) {
+		text-decoration-color: currentColor;
+	}
+
+	@media (min-width: 50em) {
+		.about {
+			display: grid;
+			grid-template-columns: 1fr 60% 1fr;
+		}
+
+		.about > :global(:first-child) {
+			grid-column-start: 2;
+		}
+
+		section {
+			display: contents;
+			font-size: var(--text-lg);
+		}
+	}
+</style>
